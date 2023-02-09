@@ -1,0 +1,62 @@
+@import '../../styles.scss';
+
+.movies{
+  background-color: $content-bg;
+  color: $color-primary;
+}
+
+.line{
+  margin-top: 2rem;
+  padding: auto;
+  line-height: 2px;
+  background: #353535;
+  width: 100%;
+}
+
+.movies h2{
+  font-size: 1.5rem;
+  color: $color-secondary;
+}
+
+.about-movie{
+  // width: 100%;
+}
+.about-movie p{
+  color: $white-smoke;
+}
+.like{
+  // top: 0;
+  background: $dark-bg;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+
+}
+.like i{
+  color: $color-secondary;
+  padding: 11px 16px;
+}
+
+.pagination li{
+  margin-right: 1rem;
+
+}
+
+.pagination a{
+  border-radius: 1px;
+  background: #D9D9D9;
+  color: $black;
+  border: 0px;
+  padding: 10px 20px
+}
+
+.active a{
+  background: $color-secondary;
+  color: $white;
+}
+
+.poster{
+  // height: 330px;
+  min-height: 40vh;
+  max-width: 30vw;
+}

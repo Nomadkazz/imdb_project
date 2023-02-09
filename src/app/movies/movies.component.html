@@ -1,0 +1,83 @@
+<section class="movies">
+  <div class="container">
+      <h1>Смотреть фильмы онлайн бесплатно</h1>
+
+      <div class="mb-3" *ngFor="let movie of movie_list">
+        <hr class="line">
+        <h2 class="color-secondary">{{movie.title}}</h2>
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-12 d-flex poster p-0" [style.background]="'linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #000000 90.7%), center / cover no-repeat url('+movie.poster+')'">
+              <div class="d-flex flex-column">
+                <div class="extension mb-auto mt-4 pt-2 pb-2 p-2 bg-black bg-opacity-75">
+                  <div class="m-2">
+                    {{movie.extension}}
+                  </div>
+                </div>
+                <div class="p-2">
+                  <div class="mb-3 d-flex imdb">
+                      <span class="imdb-icon p-1">IMDb</span>
+                      <span class=" imdb-rating p-1">
+                        {{movie.rating_imdb}}
+                      </span>
+                  </div>
+                  <h5>{{movie.year}}</h5>
+                  <h3>{{movie.title}}</h3>
+                  <h4 class="mt-3">Смотреть онлайн</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-6 col-sm-12 about-movie position-relative me-auto ms-auto">
+              <div class="d-flex top-0 justify-content-between">
+                <div class="align-self-start col-8">
+                  <p>
+                    Год {{movie.year}}
+                  </p>
+                  <p>
+                    Страна {{movie.country}}
+                  </p>
+                  <p>
+                    Жанр {{movie.genre}}
+                  </p>
+                  <p>
+                    {{movie.plot}}
+                  </p>
+                </div>
+                <div class="like align-self-start position-relative">
+                  <i class="position-absolute top-0 end-0 bi bi-star-fill"></i>
+                </div>
+              </div>
+              <div class="review mt-5 d-flex bottom-0 justify-content-between">
+                <div class="align-self-start col-6">
+                  <p>
+                    Еще нет отзывов
+                  </p>
+                  <p>
+                </div>
+                <div class="align-self-end">
+                  06-08-2022
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="line">
+      <nav *ngIf="num_of_pages > 1">
+        <ul class="pagination justify-content-start">
+          <!-- <li id="prev" class="page-item" [ngClass]="{ 'disabled': this.page === '1' }">
+            <a class="page-link" href="#" (click)="prev()">Previous</a>
+          </li> -->
+          <ng-container >
+            <li class="page-item" *ngFor="let number of numbers" [ngClass]="{ 'active': this.page === number }">
+              <a class="page-link" href="#" (click)="to(number)">{{number}}</a>
+            </li>
+          </ng-container>
+          <!-- <li id="next" class="page-item" [ngClass]="{ 'disabled': this.page === num_of_pages }">
+            <a class="page-link" href="#" (click)="next()" disabled="true">Next</a>
+          </li> -->
+        </ul>
+      </nav>
+    </div>
+</section>

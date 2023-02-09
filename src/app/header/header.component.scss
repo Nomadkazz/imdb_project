@@ -1,0 +1,92 @@
+@import '../../styles.scss';
+
+.offcanvas-header{ display:none; }
+
+@media (max-width: 992px) {
+  .offcanvas-header{ display:block; }
+  .navbar-collapse {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: black;
+    transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
+  }
+  .navbar-collapse.show {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+}
+
+
+.header {
+  z-index: 997;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  // height: 100px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, #000000 85.7%);
+}
+
+.header .logo h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0;
+  font-family: $font-primary;
+}
+
+.header .logo h1 span {
+  color: $color-primary;
+}
+
+.header ul li{
+  padding-right: 10px;
+}
+
+.navbar{
+  padding-top: 20px;
+}
+
+.profile i {
+  color: $black;
+  border-radius: 50%;
+  background: $color-secondary;
+  padding: 2px;
+}
+// #hero::before {
+//   content: '';
+//   position: absolute;
+//   width: 100%;
+//   min-height: 774px;
+//   left: 0px;
+//   top: 0px;
+//   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #000000 90.7%);
+
+// }
+
+#hero{
+  width: 100%;
+  height: 774px;
+  left: 0px;
+  top: 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, #000000 90.7%), center / cover no-repeat  url('/assets/images/hero.png');
+}
+
+#hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
